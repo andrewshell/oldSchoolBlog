@@ -16,7 +16,7 @@ URL of a YouTube video. If present there's a wedge to the left of the headline, 
 
 ### urltweet
 
-URL of a tweet. If present there's a wedge to the left of the headline, click it to reveal the embedded tweet below the post. You can get the URL by viewing the tweet in Twitter, copy the address in the address bar of the browser. 
+URL of a tweet. If present there's a wedge to the left of the headline, click it to reveal the embedded tweet below the post. You can get the URL by viewing the tweet in Twitter, copy the address in the address bar of the browser.
 
 ### urlexpandableimage
 
@@ -28,17 +28,22 @@ Attach this to the title headline of a titled post. It's the description of the 
 
 ### metaImage
 
-Like description, this is part of the Twitter and Facebook metadata. It's the image. We couldn't call it image because there already was an attribute with that name. 
+Like description, this is part of the Twitter and Facebook metadata. It's the image. We couldn't call it image because there already was an attribute with that name.
 
 ### flBulletedSubs
 
-Add this to a headline with subs. When viewing the page the reader will see bullets next to each of the subs. 
+Add this to a headline with subs. When viewing the page the reader will see bullets next to each of the subs.
 
 ### flNumberedSubs
 
-Add this to a headline with subs. When viewing the page the reader will see a number, in sequence, next to each of the subs. 
+Add this to a headline with subs. When viewing the page the reader will see a number, in sequence, next to each of the subs.
 
 ### collapse
 
-Add this to a headline with subs. If present and true, the subs will be collapse initially when displayed for the reader. 
+Add this to a headline with subs. If present and true, the subs will be collapse initially when displayed for the reader.
 
+### enclosure
+### enclosureType
+### enclosureLength
+### inlineImage
+### inlineVideo
