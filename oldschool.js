@@ -549,7 +549,7 @@ function publishBlog (jstruct, options, callback) {
 				addImage (metadata.image);
 				}
 			if (metadata.body !== undefined) { //12/22/19 by DW
-				add ("<meta name=\"twitter:body\" content=\"" + new Buffer (metadata.body).toString ("base64") + "\">");
+				add ("<meta name=\"twitter:body\" content=\"" + Buffer.from (metadata.body).toString ("base64") + "\">");
 				
 				}
 			else {
