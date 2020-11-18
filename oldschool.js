@@ -14,10 +14,26 @@ const http = require ("http");
 const emoji = require ("node-emoji"); 
 const marked = require ("marked"); 
 const fs = require ("fs");
+const nodepath = require ("path");
 const querystring = require ("querystring");
 const opml = require ("daveopml");
 const xmlrpc = require ("davexmlrpc"); //10/14/19 by DW
 const macroprocess = require ("macroprocess"); //9/2/20 by DW
+const crypto = require('crypto');
+
+const s3PutObject = s3.newObject;
+
+s3.newObject = function (path, data, type, acl, callback, metadata) {
+	let localFilePath = nodepath.join(config.buildFolder, path);
+
+	if (!fs.existsSync(nodepath.dirname(localFilePath))) {
+		fs.mkdirSync(nodepath.dirname(localFilePath), { recursive: true } );
+		}
+
+	fs.writeFileSync(localFilePath, data, 'utf8');
+	callback (null, { 'ETag': '"' + crypto.createHash('md5').update(data).digest("hex") + '"' });
+	// s3PutObject (path, data, type, acl, callback, metadata);
+	}
 
 var baseOutputPath = "/scripting.com/reboot/test/v2/", baseOutputUrl = "http:/" + baseOutputPath;
 var urlDefaultTemplate = "http://scripting.com/code/oldschool/daytemplate.html"
@@ -40,6 +56,7 @@ var config = { //defaults
 	pagesFolder: "data/pages/",
 	daysFolder: "data/days/",
 	itemsFolder: "data/items/",
+	buildFolder: "data/build/",
 	debugMessageCallback: undefined, //8/8/17 by DW
 	flXmlRpcPing: false, //11/22/19 by DW
 	urlPingEndpoint: "http://githubstorypage.scripting.com/rpc2", //11/22/19 by DW
