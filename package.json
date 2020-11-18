@@ -1,5 +1,5 @@
 {
-	"name": "oldschoolblog", 
+	"name": "oldschoolblog",
 	"description": "Blogging in the ways of the old school.",
 	"version": "0.6.7",
 	"author": "Dave Winer <dave@scripting.com>",
@@ -7,22 +7,22 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/scripting/oldSchoolBlog.git"
-		},
+	},
 	"main": "oldschool.js",
 	"files": [
 		"oldschool.js"
-		],
-	"dependencies" : {
+	],
+	"dependencies": {
 		"request": "*",
 		"nodejs-websocket": "*",
 		"dateformat": "*",
 		"marked": "*",
 		"node-emoji": "*",
 		"daverss": "*",
-		"daves3": "*", 
+		"daves3": "*",
 		"daveopml": "*",
 		"daveutils": "*",
 		"davexmlrpc": "*",
 		"macroprocess": "*"
-		}
 	}
+}
