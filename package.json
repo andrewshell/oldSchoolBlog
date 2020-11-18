@@ -4,6 +4,9 @@
 	"version": "0.6.7",
 	"author": "Dave Winer <dave@scripting.com>",
 	"license": "MIT",
+	"scripts": {
+		"start": "nodemon --ignore 'data/*' index.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/scripting/oldSchoolBlog.git"
@@ -24,5 +27,8 @@
 		"daveutils": "*",
 		"davexmlrpc": "*",
 		"macroprocess": "*"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.6"
 	}
 }
